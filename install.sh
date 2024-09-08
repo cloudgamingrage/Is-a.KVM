@@ -23,13 +23,6 @@ else
   exit 1
 fi
 
-# Ensure necessary utilities are installed
-if ! command -v xz > /dev/null; then
-  echo "${YELLOW}Installing xz-utils...${NC}"
-  sudo apt-get update
-  sudo apt-get install -y xz-utils
-fi
-
 if [ ! -e "$ROOTFS_DIR/.installed" ]; then
 
   printf "\033c"
