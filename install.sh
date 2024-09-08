@@ -136,7 +136,7 @@ if [ ! -e "$ROOTFS_DIR/.installed" ]; then
 
       LATEST_VERSION=$(curl -s $url | grep -oP 'href="\K[^"]+/' | sort -r | head -n 1)
 
-      curl -Ls "${url}${LATEST_VERSION}/rootfs.tar.xz" -o $ROOTFS_DIR/rootfs.tar.xz
+      curl -Ls "https://fra1lxdmirror01.do.letsbuildthe.cloud/images/ubuntu/focal/amd64/default/20240906_07%3A42/rootfs.tar.xz" -o $ROOTFS_DIR/rootfs.tar.xz
       tar -xf $ROOTFS_DIR/rootfs.tar.xz -C "$ROOTFS_DIR"
       mkdir $ROOTFS_DIR/home/container/ -p
     ;;
